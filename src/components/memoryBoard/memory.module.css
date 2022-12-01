@@ -1,6 +1,22 @@
+.all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+.points {
+  padding: 16px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+}
+.headline {
+  font-size: 7vh;
 }
