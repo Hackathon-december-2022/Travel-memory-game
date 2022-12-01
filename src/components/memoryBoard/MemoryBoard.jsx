@@ -4,6 +4,7 @@ import fox from "../../assets/memory2.jpeg";
 import horse from "../../assets/memory3.jpeg";
 import Card from "../Card/Card";
 import { useEffect, useState } from "react";
+import Confetti from "react-confetti";
 
 function MemoryBoard() {
   const cards = [
@@ -17,12 +18,20 @@ function MemoryBoard() {
   const [solvedMemories, setSolvedMemories] = useState([]);
   const [prevIndex, setPrevIndex] = useState(null);
   const [moves, setMoves] = useState(0);
+  const [youWon, setYouWon] = useState(false);
 
   function shuffleCards(array) {
     return array.sort(() => {
       return Math.random() - 0.5;
     });
   }
+
+  useEffect(() => {
+    if (solvedMemories.length / 2 === cards.length) {
+      setYouWon(true);
+      console.log("WOW");
+    }
+  }, [solvedMemories]);
 
   useEffect(() => {
     let double = [...cards, ...cards];
@@ -58,6 +67,7 @@ function MemoryBoard() {
       setSolvedMemories([]);
       setPrevIndex(null);
       setMoves(0);
+      setYouWon(false);
     }
   }
   return (
@@ -75,12 +85,14 @@ function MemoryBoard() {
             setCardIndex={setCardIndex}
             prevIndex={prevIndex}
             setPrevIndex={setPrevIndex}
+            solvedMemories={solvedMemories}
           />
         ))}
       </div>
       <button className={styles.button} onClick={handleRestart}>
         Restart
       </button>
+      {youWon && <Confetti></Confetti>}
     </div>
   );
 }
