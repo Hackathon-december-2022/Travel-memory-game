@@ -1,4 +1,4 @@
-## :rocket: :artificial_satellite: :earth_africa: SPACE EXPLORER
+## TRAVEL MEMORY GAME
 
 ### Build with React.....
 
