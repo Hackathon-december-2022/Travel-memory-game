@@ -16,6 +16,7 @@ function MemoryBoard() {
   const [cardIndex, setCardIndex] = useState([]);
   const [solvedMemories, setSolvedMemories] = useState([]);
   const [prevIndex, setPrevIndex] = useState(null);
+  const [moves, setMoves] = useState(0);
 
   function shuffleCards(array) {
     return array.sort(() => {
@@ -32,6 +33,7 @@ function MemoryBoard() {
   useEffect(() => {
     const [firstCard, secondCard] = clickedCards;
     if (clickedCards.length === 2) {
+      setMoves((prev) => prev + 1);
       if (firstCard === secondCard) {
         console.log("hurra");
         setSolvedMemories((prev) => [...prev, ...cardIndex]);
@@ -48,29 +50,37 @@ function MemoryBoard() {
     console.log(`solvedMemories ${solvedMemories}`);
   }, [cardIndex]);
 
-
-  handleRestart() {
-    setCardIndex([]);
-    setClickedCards([])
-    setSolvedMemories([])
-    setPrevIndex(null)
+  function handleRestart() {
+    if (window.confirm("Do you really want to restart?")) {
+      console.log("hello");
+      setCardIndex([]);
+      setClickedCards([]);
+      setSolvedMemories([]);
+      setPrevIndex(null);
+      setMoves(0);
+    }
   }
   return (
-    <div className={styles.container}>
-      {memoryCards.map((el, index) => (
-        <Card
-          key={index}
-          index={index}
-          name={el.name}
-          img={el.img}
-          id={el.id}
-          setClickedCards={setClickedCards}
-          setCardIndex={setCardIndex}
-          prevIndex={prevIndex}
-          setPrevIndex={setPrevIndex}
-        />
-      ))}
-      <button onClick={handleRestart}>Restart</button>
+    <div className={styles.all}>
+      <div className={styles.moves}>{moves}</div>
+      <div className={styles.container}>
+        {memoryCards.map((el, index) => (
+          <Card
+            key={index}
+            index={index}
+            name={el.name}
+            img={el.img}
+            id={el.id}
+            setClickedCards={setClickedCards}
+            setCardIndex={setCardIndex}
+            prevIndex={prevIndex}
+            setPrevIndex={setPrevIndex}
+          />
+        ))}
+      </div>
+      <button className={styles.button} onClick={handleRestart}>
+        Restart
+      </button>
     </div>
   );
 }
