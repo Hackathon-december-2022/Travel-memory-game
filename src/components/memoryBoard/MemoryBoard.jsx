@@ -12,7 +12,9 @@ function MemoryBoard() {
     { id: 3, img: horse, name: "horse" },
   ];
   const [memoryCards, setMemoryCards] = useState(cards);
-  const [clickedCards, setClickedCards] = useState(null);
+  const [clickedCards, setClickedCards] = useState([]);
+  const [cardIndex, setCardIndex] = useState([]);
+  const [flippedCards, setFlippedCards] = useState([]);
 
   function shuffleCards(array) {
     return array.sort(() => {
@@ -27,8 +29,20 @@ function MemoryBoard() {
   }, []);
 
   useEffect(() => {
-    console.log(clickedCards);
-  }, [clickedCards]);
+    const [firstCard, secondCard] = clickedCards;
+    if (clickedCards.length === 2) {
+      if (firstCard === secondCard) {
+        console.log("hurra");
+        setFlippedCards((prev) => [...prev, ...cardIndex]);
+        setClickedCards([]);
+        setCardIndex([]);
+      } else {
+        setClickedCards([]);
+        setCardIndex([]);
+        console.log("nope");
+      }
+    }
+  }, [cardIndex]);
 
   return (
     <div className={styles.container}>
@@ -40,6 +54,7 @@ function MemoryBoard() {
           img={el.img}
           id={el.id}
           setClickedCards={setClickedCards}
+          setCardIndex={setCardIndex}
         />
       ))}
     </div>
