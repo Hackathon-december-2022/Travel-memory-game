@@ -9,6 +9,14 @@
   justify-content: center;
   align-items: center;
 }
-
+.points {
+  padding: 16px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
 .button {
+}
+.headline {
+  font-size: 7vh;
 }

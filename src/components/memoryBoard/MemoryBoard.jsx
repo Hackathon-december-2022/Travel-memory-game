@@ -72,7 +72,13 @@ function MemoryBoard() {
   }
   return (
     <div className={styles.all}>
-      <div className={styles.moves}>{moves}</div>
+      <h1 className={styles.headline}>Travel Memory</h1>
+      <div className={styles.points}>
+        <div className={styles.moves}>
+          Done: {moves} / {cards.length}
+        </div>
+        <div className={styles.moves}>Moves: {moves}</div>
+      </div>
       <div className={styles.container}>
         {memoryCards.map((el, index) => (
           <Card
