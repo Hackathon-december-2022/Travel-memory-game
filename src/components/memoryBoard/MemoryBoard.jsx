@@ -17,7 +17,6 @@ function MemoryBoard() {
   const [cardIndex, setCardIndex] = useState([]);
   const [solvedMemories, setSolvedMemories] = useState([]);
   const [prevIndex, setPrevIndex] = useState(null);
-  const [cardIndex, setCardIndex] = useState([]);
   const [moves, setMoves] = useState(0);
   const [youWon, setYouWon] = useState(false);
 
@@ -94,7 +93,6 @@ function MemoryBoard() {
             setClickedCards={setClickedCards}
             setCardIndex={setCardIndex}
             cardIndex={cardIndex}
-            setCardIndex={setCardIndex}
             prevIndex={prevIndex}
             setPrevIndex={setPrevIndex}
             solvedMemories={solvedMemories}

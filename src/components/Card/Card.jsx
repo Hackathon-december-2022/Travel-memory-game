@@ -1,5 +1,5 @@
 import styles from "./card.module.css";
-import { useState } from "react";
+//import { useState } from "react";
 
 function Card({
   img,
@@ -24,10 +24,7 @@ function Card({
     }
   }
   return (
-    <div
-      className={flip ? `${styles.active} ${styles.card}` : `${styles.card}`}
-      onClick={handleClick}
-    >
+    <div className={styles.card} onClick={handleClick}>
       <div className={styles.flipCardInner}>
         <div className={styles.flipCardFront}>Hello</div>
         <div className={styles.flipCardBack}>
