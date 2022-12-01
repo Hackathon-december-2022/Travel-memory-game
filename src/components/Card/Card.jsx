@@ -45,12 +45,3 @@ function Card({
   );
 }
 export default Card;
-
-//<div className={styles.card} onClick={handleClick}>
-//  <div className={styles.flipCardInner}>
-//    <div className={styles.flipCardFront}>Hello</div>
-//    <div className={styles.flipCardBack}>
-//      <img className={styles.cardImg} src={img} alt={name} />
-//    </div>
-//  </div>
-//</div>;
