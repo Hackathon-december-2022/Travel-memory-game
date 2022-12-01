@@ -16,6 +16,7 @@ function Card({
   const [flip, setFlip] = useState(false);
   useEffect(() => {
     setFlip(flippedCards[index]);
+    // eslint-disable-next-line
   }, [flippedCards]);
 
   function handleClick() {

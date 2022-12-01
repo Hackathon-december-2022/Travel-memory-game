@@ -20,6 +20,7 @@ function MemoryBoard() {
   const [moves, setMoves] = useState(0);
   const [youWon, setYouWon] = useState(false);
   const [restart, setRestart] = useState(false);
+  const [currentFlippedCards, setCurrentFlippedCards] = useState([...cards]);
   const [flippedCards, setFlippedCards] = useState(
     Array(cards.length * 2).fill(false)
   );
@@ -50,44 +51,44 @@ function MemoryBoard() {
     if (clickedCards.length === 2) {
       setMoves((prev) => prev + 1);
       if (firstCard === secondCard) {
-        console.log("hurra");
+        // console.log("hurra");
         setSolvedMemories((prev) => [...prev, ...cardIndex]);
         setClickedCards([]);
         setCardIndex([]);
       } else {
         setClickedCards([]);
         setCardIndex([]);
-        console.log("nope");
+        // console.log("nope");
       }
     }
-    console.log(`cardIndex ${cardIndex}`);
-    console.log(`clickedCards ${clickedCards}`);
-    console.log(`solvedMemories ${solvedMemories}`);
     // eslint-disable-next-line
   }, [cardIndex]);
 
   useEffect(() => {
-    const allFlipped = flippedCards;
-    for (let i = 0; i < solvedMemories.length; i++) {
-      if (solvedMemories.includes(i)) {
-        allFlipped[i] = !allFlipped[i];
+    setCurrentFlippedCards((prev) => [...solvedMemories, ...cardIndex]);
+    console.log(currentFlippedCards);
+    let flippedState = [];
+    for (let i = 0; i < cards.length * 2; i++) {
+      if (currentFlippedCards.includes(i)) {
+        flippedState.push(true);
+      } else {
+        flippedState.push(false);
       }
     }
-    setFlippedCards((prev) => allFlipped);
-    console.log(flippedCards);
-  }, [solvedMemories, clickedCards]);
+    setFlippedCards(flippedState);
+    // eslint-disable-next-line
+  }, [clickedCards, solvedMemories, prevIndex]);
 
   function handleRestart() {
     if (window.confirm("Do you really want to restart?")) {
-      console.log("hello");
       setCardIndex([]);
-      setClickedCards([]);
+      setClickedCards((prev) => []);
       setSolvedMemories([]);
       setPrevIndex(null);
       setMoves(0);
       setYouWon(false);
       setRestart(!restart);
-      setFlippedCards(Array(cards.length * 2).fill(false));
+      setFlippedCards((prev) => Array(cards.length * 2).fill(false));
     }
   }
   return (
@@ -95,7 +96,7 @@ function MemoryBoard() {
       <h1 className={styles.headline}>Travel Memory</h1>
       <div className={styles.points}>
         <div className={styles.moves}>
-          Done: {moves} / {cards.length}
+          Done: {solvedMemories.length / 2} / {cards.length}
         </div>
         <div className={styles.moves}>Moves: {moves}</div>
       </div>
@@ -109,7 +110,6 @@ function MemoryBoard() {
             id={el.id}
             setClickedCards={setClickedCards}
             setCardIndex={setCardIndex}
-            cardIndex={cardIndex}
             prevIndex={prevIndex}
             setPrevIndex={setPrevIndex}
             solvedMemories={solvedMemories}
