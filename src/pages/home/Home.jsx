@@ -1,4 +1,10 @@
+import MemoryBoard from "../../components/memoryBoard/MemoryBoard";
+
 function Home() {
-  return <></>;
+  return (
+    <>
+      <MemoryBoard />
+    </>
+  );
 }
 export default Home;
