@@ -5,13 +5,9 @@ import horse from "../../assets/memory3.jpeg";
 import Card from "../Card/Card";
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
+import CardsData from "./CardsData";
 
 function MemoryBoard() {
-  const cards = [
-    { id: 1, img: cat, name: "cat" },
-    { id: 2, img: fox, name: "fox" },
-    { id: 3, img: horse, name: "horse" },
-  ];
   const [memoryCards, setMemoryCards] = useState(cards);
   const [clickedCards, setClickedCards] = useState([]);
   const [cardIndex, setCardIndex] = useState([]);
@@ -28,7 +24,7 @@ function MemoryBoard() {
   }
 
   useEffect(() => {
-    if (solvedMemories.length / 2 === cards.length) {
+    if (solvedMemories.length / 2 === CardsData.length) {
       setYouWon(true);
       console.log("WOW");
     }
@@ -36,7 +32,7 @@ function MemoryBoard() {
   }, [solvedMemories]);
 
   useEffect(() => {
-    let double = [...cards, ...cards];
+    let double = [...CardsData, ...CardsData];
     shuffleCards(double);
     setMemoryCards(double);
     // eslint-disable-next-line
@@ -80,7 +76,7 @@ function MemoryBoard() {
       <h1 className={styles.headline}>Travel Memory</h1>
       <div className={styles.points}>
         <div className={styles.moves}>
-          Done: {moves} / {cards.length}
+          Done: {moves} / {CardsData.length}
         </div>
         <div className={styles.moves}>Moves: {moves}</div>
       </div>
