@@ -1,9 +1,9 @@
 .card {
-  width: 40vh;
-  height: 40vh;
+  width: 30vw;
+  height: 30vw;
   border: 1px solid black;
   overflow: hidden;
-  margin: 5px;
+  margin: 1vw;
   border-radius: 3px;
   cursor: pointer;
   background-color: transparent;

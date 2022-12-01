@@ -1,13 +1,27 @@
 import styles from "./card.module.css";
 import { useState } from "react";
 
-function Card({ img, name, id, setClickedCards }) {
-  const [flip, setFlip] = useState(false);
-  console.log("rendering");
+function Card({
+  img,
+  name,
+  id,
+  setClickedCards,
+  index,
+  setCardIndex,
+  prevIndex,
+  setPrevIndex,
+  solvedMemories,
+}) {
   function handleClick() {
-    setClickedCards(id);
-
-    setFlip(!flip);
+    if (prevIndex !== index) {
+      if (!solvedMemories.includes(index)) {
+        setClickedCards((prev) => [...prev, id]);
+        setCardIndex((prev) => [...prev, index]);
+        setPrevIndex(index);
+      } else {
+        console.log("contained!");
+      }
+    }
   }
   return (
     <div
