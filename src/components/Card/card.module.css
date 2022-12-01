@@ -55,7 +55,6 @@
 }
 
 .cardFaceBack {
-  background: slateblue;
   transform: rotateY(180deg);
 }
 
