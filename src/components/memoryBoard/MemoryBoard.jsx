@@ -13,6 +13,7 @@ function MemoryBoard() {
   ];
   const [memoryCards, setMemoryCards] = useState(cards);
   const [clickedCards, setClickedCards] = useState(null);
+  const [cardIndex, setCardIndex] = useState([]);
 
   function shuffleCards(array) {
     return array.sort(() => {
@@ -40,6 +41,8 @@ function MemoryBoard() {
           img={el.img}
           id={el.id}
           setClickedCards={setClickedCards}
+          setCardIndex={setCardIndex}
+          cardIndex={cardIndex}
         />
       ))}
     </div>
