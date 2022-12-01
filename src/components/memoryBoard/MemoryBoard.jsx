@@ -20,6 +20,9 @@ function MemoryBoard() {
   const [moves, setMoves] = useState(0);
   const [youWon, setYouWon] = useState(false);
   const [restart, setRestart] = useState(false);
+  const [flippedCards, setFlippedCards] = useState(
+    Array(cards.length * 2).fill(false)
+  );
 
   function shuffleCards(array) {
     return array.sort(() => {
@@ -63,6 +66,17 @@ function MemoryBoard() {
     // eslint-disable-next-line
   }, [cardIndex]);
 
+  useEffect(() => {
+    const allFlipped = flippedCards;
+    for (let i = 0; i < solvedMemories.length; i++) {
+      if (solvedMemories.includes(i)) {
+        allFlipped[i] = !allFlipped[i];
+      }
+    }
+    setFlippedCards((prev) => allFlipped);
+    console.log(flippedCards);
+  }, [solvedMemories, clickedCards]);
+
   function handleRestart() {
     if (window.confirm("Do you really want to restart?")) {
       console.log("hello");
@@ -73,6 +87,7 @@ function MemoryBoard() {
       setMoves(0);
       setYouWon(false);
       setRestart(!restart);
+      setFlippedCards(Array(cards.length * 2).fill(false));
     }
   }
   return (
@@ -98,6 +113,7 @@ function MemoryBoard() {
             prevIndex={prevIndex}
             setPrevIndex={setPrevIndex}
             solvedMemories={solvedMemories}
+            flippedCards={flippedCards}
           />
         ))}
       </div>
