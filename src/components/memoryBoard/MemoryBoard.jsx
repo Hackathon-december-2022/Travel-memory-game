@@ -14,7 +14,8 @@ function MemoryBoard() {
   const [memoryCards, setMemoryCards] = useState(cards);
   const [clickedCards, setClickedCards] = useState([]);
   const [cardIndex, setCardIndex] = useState([]);
-  const [flippedCards, setFlippedCards] = useState([]);
+  const [solvedMemories, setSolvedMemories] = useState([]);
+  const [prevIndex, setPrevIndex] = useState(null);
 
   function shuffleCards(array) {
     return array.sort(() => {
@@ -33,7 +34,7 @@ function MemoryBoard() {
     if (clickedCards.length === 2) {
       if (firstCard === secondCard) {
         console.log("hurra");
-        setFlippedCards((prev) => [...prev, ...cardIndex]);
+        setSolvedMemories((prev) => [...prev, ...cardIndex]);
         setClickedCards([]);
         setCardIndex([]);
       } else {
@@ -42,6 +43,9 @@ function MemoryBoard() {
         console.log("nope");
       }
     }
+    console.log(`cardIndex ${cardIndex}`);
+    console.log(`clickedCards ${clickedCards}`);
+    console.log(`solvedMemories ${solvedMemories}`);
   }, [cardIndex]);
 
   return (
@@ -55,6 +59,8 @@ function MemoryBoard() {
           id={el.id}
           setClickedCards={setClickedCards}
           setCardIndex={setCardIndex}
+          prevIndex={prevIndex}
+          setPrevIndex={setPrevIndex}
         />
       ))}
     </div>

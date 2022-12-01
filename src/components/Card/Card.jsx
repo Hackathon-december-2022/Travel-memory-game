@@ -1,9 +1,21 @@
 import styles from "./card.module.css";
 
-function Card({ img, name, id, setClickedCards, index, setCardIndex }) {
+function Card({
+  img,
+  name,
+  id,
+  setClickedCards,
+  index,
+  setCardIndex,
+  prevIndex,
+  setPrevIndex,
+}) {
   function handleClick() {
-    setClickedCards((prev) => [...prev, id]);
-    setCardIndex((prev) => [...prev, index]);
+    if (prevIndex !== index) {
+      setClickedCards((prev) => [...prev, id]);
+      setCardIndex((prev) => [...prev, index]);
+      setPrevIndex(index);
+    }
   }
   return (
     <div className={styles.card} onClick={handleClick}>
