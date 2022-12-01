@@ -1,0 +1,18 @@
+.card {
+  width: 40vh;
+  height: 40vh;
+  border: 1px solid black;
+  overflow: hidden;
+  margin: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 1px 1px 5px #888888;
+}
+
+.cardImg {
+  width: 100%;
+  object-fit: cover;
+}
