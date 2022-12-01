@@ -1,5 +1,5 @@
 import styles from "./card.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Card({
   img,
@@ -14,7 +14,7 @@ function Card({
 }) {
   const [flip, setFlip] = useState(false);
   function handleClick() {
-    setFlip(!flip);
+    setFlip(true);
     if (prevIndex !== index) {
       if (!solvedMemories.includes(index)) {
         setClickedCards((prev) => [...prev, id]);
@@ -25,6 +25,15 @@ function Card({
       }
     }
   }
+
+  console.log("solvedMemories", solvedMemories);
+
+  useEffect(() => {
+    if (solvedMemories.length) {
+      console.log("coucou");
+    }
+  }, [solvedMemories]);
+
   return (
     <div className={styles.card} onClick={handleClick}>
       <div
@@ -34,9 +43,7 @@ function Card({
             : `${styles.innerCard}`
         }
       >
-        <div className={`${styles.cardFace} ${styles.cardFaceFront}`}>
-          Front
-        </div>
+        <div className={`${styles.cardFace} ${styles.cardFaceFront}`}></div>
         <div className={`${styles.cardFace} ${styles.cardFaceBack}`}>
           <img className={styles.cardImg} src={img} alt={name} />
         </div>

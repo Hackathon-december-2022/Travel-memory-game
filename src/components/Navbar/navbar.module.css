@@ -3,7 +3,8 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  background-color: aqua;
+  background-color: #c26dbc;
+  padding: 10px;
 }
 
 .rules {
@@ -13,5 +14,10 @@
   align-items: center;
   padding-right: 1rem;
   font-weight: bold;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 0.1rem;
+  /*font-family: Georgia, "Times New Roman", Times, serif;*/
+}
+
+.rules:hover {
+  color: white;
 }

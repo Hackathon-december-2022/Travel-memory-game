@@ -1,7 +1,7 @@
 .card {
   display: inline-block;
-  width: 30%;
-  aspect-ratio: 1 / 1;
+  width: 30vh;
+  height: 30vh;
   margin: 40px 0;
   perspective: 600px;
   margin: 1vw;

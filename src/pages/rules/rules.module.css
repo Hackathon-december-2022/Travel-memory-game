@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin: 2rem;
+  min-height: 90vh;
 }
 .headline {
   padding: 15px;

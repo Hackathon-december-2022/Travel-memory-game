@@ -47,19 +47,19 @@ function MemoryBoard() {
     if (clickedCards.length === 2) {
       setMoves((prev) => prev + 1);
       if (firstCard === secondCard) {
-        console.log("hurra");
+        console.log("hurra"); // => when hurra set the cards flipped to black - not possibity to click
         setSolvedMemories((prev) => [...prev, ...cardIndex]);
         setClickedCards([]);
         setCardIndex([]);
       } else {
         setClickedCards([]);
         setCardIndex([]);
-        console.log("nope");
+        console.log("nope"); //=> when nop then setflip to false again
       }
     }
-    console.log(`cardIndex ${cardIndex}`);
-    console.log(`clickedCards ${clickedCards}`);
-    console.log(`solvedMemories ${solvedMemories}`);
+    //console.log(`cardIndex ${cardIndex}`);
+    //console.log(`clickedCards ${clickedCards}`);
+    //console.log(`solvedMemories ${solvedMemories}`);
     // eslint-disable-next-line
   }, [cardIndex]);
 
