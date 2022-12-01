@@ -31,12 +31,14 @@ function MemoryBoard() {
       setYouWon(true);
       console.log("WOW");
     }
+    // eslint-disable-next-line
   }, [solvedMemories]);
 
   useEffect(() => {
     let double = [...cards, ...cards];
     shuffleCards(double);
     setMemoryCards(double);
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -57,6 +59,7 @@ function MemoryBoard() {
     console.log(`cardIndex ${cardIndex}`);
     console.log(`clickedCards ${clickedCards}`);
     console.log(`solvedMemories ${solvedMemories}`);
+    // eslint-disable-next-line
   }, [cardIndex]);
 
   function handleRestart() {
