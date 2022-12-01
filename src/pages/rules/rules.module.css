@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding-bottom: 3rem;
+}
+
+.introduction {
+  padding: 10px;
+}
+
+.rulesHeadline {
+  padding: 10px;
+}
+.listItems {
+  padding: 10px;
+  list-style: none;
+}

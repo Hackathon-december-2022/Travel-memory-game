@@ -92,6 +92,7 @@ function MemoryBoard() {
             id={el.id}
             setClickedCards={setClickedCards}
             setCardIndex={setCardIndex}
+            cardIndex={cardIndex}
             prevIndex={prevIndex}
             setPrevIndex={setPrevIndex}
             solvedMemories={solvedMemories}

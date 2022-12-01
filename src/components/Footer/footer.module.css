@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: aqua;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.aboutUs {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.projectLink {
+  display: flex;
+  justify-content: center;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}

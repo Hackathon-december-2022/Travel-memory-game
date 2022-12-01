@@ -1,4 +1,5 @@
 import styles from "./card.module.css";
+//import { useState } from "react";
 
 function Card({
   img,
@@ -24,7 +25,12 @@ function Card({
   }
   return (
     <div className={styles.card} onClick={handleClick}>
-      <img className={styles.cardImg} src={img} alt={name} />
+      <div className={styles.flipCardInner}>
+        <div className={styles.flipCardFront}>Hello</div>
+        <div className={styles.flipCardBack}>
+          <img className={styles.cardImg} src={img} alt={name} />
+        </div>
+      </div>
     </div>
   );
 }
