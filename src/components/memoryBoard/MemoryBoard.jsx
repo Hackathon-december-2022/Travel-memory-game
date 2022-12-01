@@ -48,6 +48,13 @@ function MemoryBoard() {
     console.log(`solvedMemories ${solvedMemories}`);
   }, [cardIndex]);
 
+
+  handleRestart() {
+    setCardIndex([]);
+    setClickedCards([])
+    setSolvedMemories([])
+    setPrevIndex(null)
+  }
   return (
     <div className={styles.container}>
       {memoryCards.map((el, index) => (
@@ -63,6 +70,7 @@ function MemoryBoard() {
           setPrevIndex={setPrevIndex}
         />
       ))}
+      <button onClick={handleRestart}>Restart</button>
     </div>
   );
 }
