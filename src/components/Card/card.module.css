@@ -1,26 +1,17 @@
-/*.card {
-  width: 30vw;
-  height: 30vw;
-  border: 1px solid black;
-  overflow: hidden;
-  margin: 1vw;
-  border-radius: 3px;
-  cursor: pointer;
-}*/
-
 .card {
   display: inline-block;
-  width: 30vh;
-  height: 30vh;
+  width: 30%;
+  aspect-ratio: 1 / 1;
   margin: 40px 0;
   perspective: 600px;
   margin: 1vw;
   border-radius: 3px;
   cursor: pointer;
+  box-shadow: 1px 1px 3px #888888;
 }
 
 .card:hover {
-  box-shadow: 1px 1px 5px #888888;
+  box-shadow: 1px 1px 5px black;
 }
 
 .innerCard {

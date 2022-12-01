@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: aqua;
+}
+
+.rules {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}

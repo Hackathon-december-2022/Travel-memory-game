@@ -19,6 +19,7 @@ function MemoryBoard() {
   const [prevIndex, setPrevIndex] = useState(null);
   const [moves, setMoves] = useState(0);
   const [youWon, setYouWon] = useState(false);
+  const [restart, setRestart] = useState(false);
 
   function shuffleCards(array) {
     return array.sort(() => {
@@ -39,7 +40,7 @@ function MemoryBoard() {
     shuffleCards(double);
     setMemoryCards(double);
     // eslint-disable-next-line
-  }, []);
+  }, [restart]);
 
   useEffect(() => {
     const [firstCard, secondCard] = clickedCards;
@@ -71,6 +72,7 @@ function MemoryBoard() {
       setPrevIndex(null);
       setMoves(0);
       setYouWon(false);
+      setRestart(!restart);
     }
   }
   return (
