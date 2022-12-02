@@ -116,6 +116,7 @@ function MemoryBoard() {
       </div>
       <div className={styles.container}>
         {memoryCards.map((el, index) => (
+<<<<<<< HEAD
           <div className={styles.wrapper}>
             <Card
               key={index}
@@ -138,6 +139,22 @@ function MemoryBoard() {
               solvedMemories={solvedMemories}
             />
           </div>
+=======
+          <Card
+            key={index}
+            index={index}
+            name={el.name}
+            img={el.img}
+            id={el.id}
+            setClickedCards={setClickedCards}
+            setCardIndex={setCardIndex}
+            prevIndex={prevIndex}
+            setPrevIndex={setPrevIndex}
+            solvedMemories={solvedMemories}
+            flippedCards={flippedCards}
+            memorySize={memorySize}
+          />
+>>>>>>> 1874a58 (styling cards responsive with size memory)
         ))}
       </div>
       <button className={styles.button} onClick={handleRestart}>
