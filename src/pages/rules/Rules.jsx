@@ -7,7 +7,7 @@ function Rules() {
       <p className={styles.introduction}>
         You dont know where to spend your next Holidays at?
         <br />
-        No Problem, we will helpt you making a Decision.
+        No Problem, we will help you making a Decision.
         <br />
         With our Travel Memory Game we provide you with some beautiful Places to
         visit around the World and you will also have fun to explore them over a
