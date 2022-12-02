@@ -26,7 +26,6 @@ function MemoryBoard() {
 
   useEffect(() => {
     if (solvedMemories.length / 2 === parseInt(memorySize)) {
-      console.log("Hellooo");
       setYouWon(true);
     }
     // eslint-disable-next-line
