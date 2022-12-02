@@ -8,16 +8,22 @@
   padding: 16px;
 }
 
+.headline {
+  background-color: var(--fourth-color);
+}
+
 .rules {
   text-decoration: none;
   color: black;
   display: flex;
   align-items: center;
   font-weight: bold;
+  background-color: var(--fourth-color);
 }
 
 .navbarLogo {
   height: 80%;
+  background-color: var(--fourth-color);
 }
 
 .headline {
