@@ -49,14 +49,17 @@ function MemoryBoard() {
     const [firstCard, secondCard] = clickedCards;
     if (clickedCards.length === 2) {
       setMoves((prev) => prev + 1);
-      if (firstCard === secondCard) {
-        setSolvedMemories((prev) => [...prev, ...cardIndex]);
-        setClickedCards([]);
-        setCardIndex([]);
-      } else {
-        setClickedCards([]);
-        setCardIndex([]);
-      }
+      const waitToFlip = setTimeout(() => {
+        if (firstCard === secondCard) {
+          setSolvedMemories((prev) => [...prev, ...cardIndex]);
+          setClickedCards([]);
+          setCardIndex([]);
+        } else {
+          setClickedCards([]);
+          setCardIndex([]);
+        }
+      }, 300);
+      return clearTimeout(waitToFlip);
     }
     // eslint-disable-next-line
   }, [cardIndex]);
