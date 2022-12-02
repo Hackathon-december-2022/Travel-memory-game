@@ -34,7 +34,6 @@ function MemoryBoard() {
   useEffect(() => {
     if (solvedMemories.length / 2 === cards.length) {
       setYouWon(true);
-      console.log("WOW");
     }
     // eslint-disable-next-line
   }, [solvedMemories]);
@@ -51,31 +50,32 @@ function MemoryBoard() {
     if (clickedCards.length === 2) {
       setMoves((prev) => prev + 1);
       if (firstCard === secondCard) {
-        // console.log("hurra");
         setSolvedMemories((prev) => [...prev, ...cardIndex]);
         setClickedCards([]);
         setCardIndex([]);
       } else {
         setClickedCards([]);
         setCardIndex([]);
-        // console.log("nope");
       }
     }
     // eslint-disable-next-line
   }, [cardIndex]);
 
   useEffect(() => {
-    setCurrentFlippedCards((prev) => [...solvedMemories, ...cardIndex]);
-    console.log(currentFlippedCards);
+    console.log(`clicked Cards: ${[...solvedMemories, ...cardIndex]}`);
+    // setCurrentFlippedCards((prev) => [...solvedMemories, ...cardIndex]);
+
     let flippedState = [];
     for (let i = 0; i < cards.length * 2; i++) {
-      if (currentFlippedCards.includes(i)) {
+      if ([...solvedMemories, ...cardIndex].includes(i)) {
+        console.log("IF STATEMENT GOING TO TRUE");
         flippedState.push(true);
       } else {
         flippedState.push(false);
       }
     }
-    setFlippedCards(flippedState);
+    setFlippedCards([...flippedState]);
+    console.log({ flippedState });
     // eslint-disable-next-line
   }, [clickedCards, solvedMemories, prevIndex]);
 
@@ -93,7 +93,6 @@ function MemoryBoard() {
   }
   return (
     <div className={styles.all}>
-      <h1 className={styles.headline}>Travel Memory</h1>
       <div className={styles.points}>
         <div className={styles.moves}>
           Done: {solvedMemories.length / 2} / {cards.length}
