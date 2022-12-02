@@ -2,17 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem;
+  margin: 1rem;
+  padding-bottom: 3rem;
 }
-.headline {
-  padding: 15px;
-}
+
 .introduction {
   padding: 10px;
 }
 
 .rulesHeadline {
-  padding: 15px;
+  padding: 10px;
 }
 .listItems {
   padding: 10px;
