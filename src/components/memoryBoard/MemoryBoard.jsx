@@ -130,7 +130,9 @@ function MemoryBoard() {
             setPrevIndex={setPrevIndex}
             solvedMemories={solvedMemories}
             flippedCards={flippedCards}
+            memorySize={memorySize}
             setLayover={setLayover}
+
           />
         ))}
       </div>
