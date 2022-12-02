@@ -8,3 +8,8 @@
   padding-bottom: 5px;
   background-color: var(--fourth-color);
 }
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+}

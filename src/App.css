@@ -9,8 +9,11 @@
 
 :root {
   --base-font: "Roboto", sans-serif;
-  --primary-accent: #3cacae;
-  --secondary-accent: #c26dbc;
-  --third-color: rgb(255, 217, 0);
-  --fourth-color: #2c7c7d;
+  --primary-accent: #f7ece6;
+  --secondary-accent: #f7c54577;
+  --third-color: #e5e5f7;
+  --fourth-color: #ff616d;
+  --primary-card: #f7ece6;
+  --secondary-card: #f7c545;
+  --third-card: #f7c54577;
 }

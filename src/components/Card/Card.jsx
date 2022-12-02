@@ -12,6 +12,7 @@ function Card({
   setPrevIndex,
   solvedMemories,
   flippedCards,
+  memorySize,
 }) {
   const [flip, setFlip] = useState(false);
   useEffect(() => {
@@ -19,6 +20,7 @@ function Card({
     // eslint-disable-next-line
   }, [flippedCards]);
 
+  console.log("MEMORYSIZE", memorySize);
   function handleClick() {
     if (prevIndex !== index) {
       if (!solvedMemories.includes(index)) {
@@ -32,7 +34,10 @@ function Card({
     }
   }
   return (
-    <div className={styles.card} onClick={handleClick}>
+    <div
+      className={memorySize > 11 ? `${styles.card}` : `${styles.cardx8}`}
+      onClick={handleClick}
+    >
       <div
         className={
           flip
@@ -40,9 +45,7 @@ function Card({
             : `${styles.innerCard}`
         }
       >
-        <div className={`${styles.cardFace} ${styles.cardFaceFront}`}>
-          Front
-        </div>
+        <div className={`${styles.cardFace} ${styles.cardFaceFront}`}></div>
         <div className={`${styles.cardFace} ${styles.cardFaceBack}`}>
           <img className={styles.cardImg} src={img} alt={name} />
         </div>
