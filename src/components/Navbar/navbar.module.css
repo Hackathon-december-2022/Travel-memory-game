@@ -5,7 +5,7 @@
   align-items: center;
   width: 100%;
   background-color: var(--fourth-color);
-  padding: 20px 30px;
+  padding: 16px;
 }
 
 .rules {
@@ -13,7 +13,6 @@
   color: black;
   display: flex;
   align-items: center;
-  padding-right: 1rem;
   font-weight: bold;
 }
 
@@ -23,5 +22,5 @@
 
 .headline {
   color: white;
-  font-size: 3rem;
+  font-size: 1.8rem;
 }
