@@ -20,7 +20,6 @@ function MemoryBoard() {
   const [moves, setMoves] = useState(0);
   const [youWon, setYouWon] = useState(false);
   const [restart, setRestart] = useState(false);
-  const [currentFlippedCards, setCurrentFlippedCards] = useState([...cards]);
   const [flippedCards, setFlippedCards] = useState(
     Array(cards.length * 2).fill(false)
   );
@@ -49,6 +48,7 @@ function MemoryBoard() {
     const [firstCard, secondCard] = clickedCards;
     if (clickedCards.length === 2) {
       setMoves((prev) => prev + 1);
+      // eslint-disable-next-line
       const waitToFlip = setTimeout(() => {
         if (firstCard === secondCard) {
           setSolvedMemories((prev) => [...prev, ...cardIndex]);
@@ -58,29 +58,24 @@ function MemoryBoard() {
           setClickedCards([]);
           setCardIndex([]);
         }
-      }, 300);
-      return clearTimeout(waitToFlip);
+      }, 1200);
+      ///return clearTimeout(waitToFlip);
     }
     // eslint-disable-next-line
   }, [cardIndex]);
 
   useEffect(() => {
-    console.log(`clicked Cards: ${[...solvedMemories, ...cardIndex]}`);
-    // setCurrentFlippedCards((prev) => [...solvedMemories, ...cardIndex]);
-
     let flippedState = [];
     for (let i = 0; i < cards.length * 2; i++) {
       if ([...solvedMemories, ...cardIndex].includes(i)) {
-        console.log("IF STATEMENT GOING TO TRUE");
         flippedState.push(true);
       } else {
         flippedState.push(false);
       }
     }
     setFlippedCards([...flippedState]);
-    console.log({ flippedState });
     // eslint-disable-next-line
-  }, [clickedCards, solvedMemories, prevIndex]);
+  }, [clickedCards[1], solvedMemories, prevIndex]);
 
   function handleRestart() {
     if (window.confirm("Do you really want to restart?")) {

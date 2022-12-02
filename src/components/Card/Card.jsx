@@ -15,20 +15,17 @@ function Card({
 }) {
   const [flip, setFlip] = useState(false);
   useEffect(() => {
-    console.log("effect running");
     setFlip(flippedCards[index]);
     // eslint-disable-next-line
   }, [flippedCards]);
 
   function handleClick() {
-    console.log(prevIndex, index);
     if (prevIndex !== index) {
       if (!solvedMemories.includes(index)) {
         setFlip((prev) => !prev);
         setClickedCards((prev) => [...prev, id]);
         setCardIndex((prev) => [...prev, index]);
         setPrevIndex(index);
-        console.log("change state");
       } else {
         console.log("contained!");
       }

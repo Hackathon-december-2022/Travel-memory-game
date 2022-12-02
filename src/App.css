@@ -4,17 +4,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--base-font);
 }
 
 :root {
+  --base-font: "Roboto", sans-serif;
   --primary-accent: #3cacae;
   --secondary-accent: #c26dbc;
   --third-color: rgb(255, 217, 0);
   --fourth-color: #2c7c7d;
-  --opace-background: rgba(237, 236, 236, 0.6);
-  --card-background: #f4f2f3;
-  --main-font: "Work Sans", sans-serif;
-  --standard-shadow: 2px 2px 4px rgba(0, 0, 0, 0.29);
-  --accent-shadow: 1px 1px 2px var(--secondary-accent);
 }
