@@ -28,6 +28,7 @@
 .headline {
   font-size: 7vh;
 }
+
 .button {
   width: 70%;
   padding: 16px;
@@ -49,6 +50,7 @@
   min-width: 10vw;
   text-align: center;
 }
+
 @media screen and (min-width: 800px) {
   .all {
     width: 70vw;
