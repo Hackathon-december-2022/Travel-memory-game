@@ -41,7 +41,6 @@
 .overlay {
   width: 100vh;
   height: 100vh;
-
   position: absolute;
   z-index: 99;
 }

@@ -18,6 +18,8 @@ function MemoryBoard() {
     Array(CardsData.length * 2).fill(false)
   );
   const [memorySize, setMemorySize] = useState(12);
+  const [layover, setLayover] = useState(false);
+
 
   function shuffleCards(array) {
     return array.sort(() => {
@@ -27,7 +29,6 @@ function MemoryBoard() {
 
   useEffect(() => {
     if (solvedMemories.length / 2 === parseInt(memorySize)) {
-      console.log("Hellooo");
       setYouWon(true);
     }
     // eslint-disable-next-line
@@ -51,6 +52,7 @@ function MemoryBoard() {
     const [firstCard, secondCard] = clickedCards;
     if (clickedCards.length === 2) {
       setMoves((prev) => prev + 1);
+      setLayover(true);
       // eslint-disable-next-line
       const waitToFlip = setTimeout(() => {
         if (firstCard === secondCard) {
@@ -61,6 +63,7 @@ function MemoryBoard() {
           setClickedCards([]);
           setCardIndex([]);
         }
+        setLayover(false);
       }, 1200);
       ///return clearTimeout(waitToFlip);
     }
@@ -100,6 +103,7 @@ function MemoryBoard() {
 
   return (
     <div className={styles.all}>
+      {layover && <div className={styles.overlay}></div>}
       <div className={styles.points}>
         <div className={styles.moves}>
           Done: {solvedMemories.length / 2} / {memorySize}
