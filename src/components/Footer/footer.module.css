@@ -7,7 +7,6 @@
   position: fixed;
   left: 0;
   bottom: 0;
-
 }
 
 .aboutUs {
@@ -17,6 +16,7 @@
   align-items: center;
   padding-left: 1rem;
   font-weight: bold;
+  background-color: var(--fourth-color);
 }
 
 .projectLink {
@@ -27,4 +27,9 @@
   padding-right: 1rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
+  background-color: var(--fourth-color);
+}
+
+.projectLink img {
+  background-color: var(--fourth-color);
 }
