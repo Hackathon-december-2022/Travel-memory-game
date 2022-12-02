@@ -5,20 +5,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 40%;
 }
 
 .headline {
-  padding: 2rem;
+  padding-top: 5px;
+  padding: 2vh;
 }
 
-.container img {
-  background-color: var(--fourth-color);
-}
 .groupImg {
   display: flex;
   justify-content: center;
   width: 80%;
   height: auto;
-  margin: 2rem;
-  background-color: var(--fourth-color);
+  margin: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+  .groupImg {
+    max-width: 50%;
+    max-height: 50%;
+  }
 }
