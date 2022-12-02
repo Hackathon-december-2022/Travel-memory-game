@@ -6,6 +6,10 @@ import picture5 from "../../assets/peles_castle.jpg";
 import picture6 from "../../assets/triumphal_arch.jpg";
 import picture7 from "../../assets/tv_tower.jpg";
 import picture8 from "../../assets/liberty.jpg";
+import picture9 from "../../assets/great_wall.jpg";
+import picture10 from "../../assets/victoria_falls.jpg";
+import picture11 from "../../assets/machu.jpg";
+import picture12 from "../../assets/pisa.jpg";
 
 const CardsData = [
   {
@@ -54,6 +58,30 @@ const CardsData = [
     img: picture8,
     name: "liberty",
     info: "The Statue of Liberty is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States. The copper statue, a gift from the people of France, was designed by French sculptor Frédéric Auguste Bartholdi and its metal framework was built by Gustave Eiffel.",
+  },
+  {
+    id: 9,
+    img: picture9,
+    name: "great_wall",
+    info: "Commonly considered a wonder of the world, the Great Wall boasts a history of over 2,000 years and stretches more than 3,000 miles across several provinces of northern China, making it one of the most impressive ancient structures on the planet.",
+  },
+  {
+    id: 10,
+    img: picture10,
+    name: "victoria_falls",
+    info: "Victoria Falls is a waterfall on the Zambezi River in southern Africa, which provides habitat for several unique species of plants and animals. It is located on the border between Zambia and Zimbabwe and is one of the world's largest waterfalls, with a width of 1,708 m.",
+  },
+  {
+    id: 11,
+    img: picture11,
+    name: "machu",
+    info: "Machu Picchu is an Incan citadel set high in the Andes Mountains in Peru, above the Urubamba River valley. Built in the 15th century and later abandoned, it’s renowned for its sophisticated dry-stone walls that fuse huge blocks without the use of mortar, intriguing buildings that play on astronomical alignments and panoramic views.",
+  },
+  {
+    id: 12,
+    img: picture12,
+    name: "pisa",
+    info: "The Leaning Tower of Pisa, or simply, the Tower of Pisa, is the campanile, or freestanding bell tower, of Pisa Cathedral. It is known for its nearly four-degree lean, the result of an unstable foundation.",
   },
 ];
 

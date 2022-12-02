@@ -1,14 +1,11 @@
 import styles from "./memory.module.css";
-import cat from "../../assets/memory1.jpeg";
-import fox from "../../assets/memory2.jpeg";
-import horse from "../../assets/memory3.jpeg";
 import Card from "../Card/Card";
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import CardsData from "./CardsData";
 
 function MemoryBoard() {
-  const [memoryCards, setMemoryCards] = useState(cards);
+  const [memoryCards, setMemoryCards] = useState(CardsData);
   const [clickedCards, setClickedCards] = useState([]);
   const [cardIndex, setCardIndex] = useState([]);
   const [solvedMemories, setSolvedMemories] = useState([]);
