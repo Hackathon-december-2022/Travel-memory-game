@@ -1,5 +1,5 @@
 import styles from "./InfoModal.module.css";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 function InfoModal({ placeTitle, placeInfo, solvedMemories, index }) {
   const [isModalOpen, setModalOpen] = useState(false);
