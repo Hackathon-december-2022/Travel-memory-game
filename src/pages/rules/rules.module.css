@@ -1,20 +1,20 @@
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 2rem;
+  background-color: var(--primary-accent);
+  min-height: 86vh;
 }
-.headline {
-  padding: 15px;
-}
+
 .introduction {
   padding: 10px;
 }
 
 .rulesHeadline {
-  padding: 15px;
+  padding: 10px;
 }
 .listItems {
-  padding: 10px;
+  padding: 5px;
   list-style: none;
 }
