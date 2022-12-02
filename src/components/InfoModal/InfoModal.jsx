@@ -1,15 +1,13 @@
-import styles from "./modal.module.css";
-import useOnClickOutside from "../../hooks/useOnClickOutside";
+import styles from "./InfoModal.module.css";
 import { useRef, useState } from "react";
-
-function InfoModal({ placeTitle, placeInfo, index, cardIndex }) {
-  const ref = useRef();
+import { AiOutlineCloseCircle } from "react-icons/ai";
+function InfoModal({ placeTitle, placeInfo, solvedMemories, index }) {
   const [isModalOpen, setModalOpen] = useState(false);
-  useOnClickOutside(ref, () => setModalOpen(false));
+  console.log(solvedMemories.indexOf(index) !== -1, "clicked", index);
   return (
     <>
       {isModalOpen ? (
-        <div ref={ref} className={styles.modalContainer}>
+        <div className={styles.modalContainer}>
           <h2>{placeTitle}</h2>
           <p>{placeInfo}</p>
           <button
@@ -17,13 +15,13 @@ function InfoModal({ placeTitle, placeInfo, index, cardIndex }) {
               e.stopPropagation();
               setModalOpen(false);
             }}
-            className={styles.btnInfoModal}
+            className={styles.btnInfoModalClose}
           >
-            close
+            <AiOutlineCloseCircle />
           </button>
         </div>
       ) : (
-        cardIndex !== index && (
+        solvedMemories.indexOf(index) !== -1 && (
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -31,7 +29,7 @@ function InfoModal({ placeTitle, placeInfo, index, cardIndex }) {
             }}
             className={styles.btnInfoModal}
           >
-            open
+            Learn More
           </button>
         )
       )}

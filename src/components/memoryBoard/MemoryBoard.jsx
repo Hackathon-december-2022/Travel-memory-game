@@ -3,6 +3,7 @@ import Card from "../Card/Card";
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import CardsData from "./CardsData";
+import InfoModal from "../InfoModal/InfoModal";
 
 function MemoryBoard() {
   const [memoryCards, setMemoryCards] = useState(CardsData);
@@ -92,19 +93,28 @@ function MemoryBoard() {
       </div>
       <div className={styles.container}>
         {memoryCards.map((el, index) => (
-          <Card
-            key={index}
-            index={index}
-            name={el.name}
-            img={el.img}
-            id={el.id}
-            setClickedCards={setClickedCards}
-            setCardIndex={setCardIndex}
-            prevIndex={prevIndex}
-            setPrevIndex={setPrevIndex}
-            solvedMemories={solvedMemories}
-            flippedCards={flippedCards}
-          />
+          <>
+            <Card
+              key={index}
+              index={index}
+              name={el.name}
+              img={el.img}
+              id={el.id}
+              setClickedCards={setClickedCards}
+              setCardIndex={setCardIndex}
+              prevIndex={prevIndex}
+              setPrevIndex={setPrevIndex}
+              solvedMemories={solvedMemories}
+              flippedCards={flippedCards}
+            />
+            <InfoModal
+              key={index}
+              index={index}
+              placeTitle={el.name}
+              placeInfo={el.info}
+              solvedMemories={solvedMemories}
+            />
+          </>
         ))}
       </div>
       <button className={styles.button} onClick={handleRestart}>
