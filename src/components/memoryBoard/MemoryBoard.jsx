@@ -93,7 +93,7 @@ function MemoryBoard() {
       </div>
       <div className={styles.container}>
         {memoryCards.map((el, index) => (
-          <>
+          <div className={styles.wrapper}>
             <Card
               key={index}
               index={index}
@@ -114,7 +114,7 @@ function MemoryBoard() {
               placeInfo={el.info}
               solvedMemories={solvedMemories}
             />
-          </>
+          </div>
         ))}
       </div>
       <button className={styles.button} onClick={handleRestart}>

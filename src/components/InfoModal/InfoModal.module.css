@@ -27,9 +27,21 @@
   border: none;
   cursor: pointer;
 }
+.btnInfoModalOverlay svg {
+  position: absolute;
+  top: 10%;
+  right: 12%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 7vh !important;
+  height: auto;
+  color: white;
+}
 
 svg {
   width: 4vh !important;
   height: auto;
-  color: orange;
+  color: rgb(146, 96, 1);
+  font-weight: 400;
 }
