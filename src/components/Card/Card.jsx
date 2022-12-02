@@ -1,5 +1,5 @@
 import styles from "./card.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Card({
   img,
@@ -11,12 +11,18 @@ function Card({
   prevIndex,
   setPrevIndex,
   solvedMemories,
+  flippedCards,
 }) {
   const [flip, setFlip] = useState(false);
+  useEffect(() => {
+    setFlip(flippedCards[index]);
+    // eslint-disable-next-line
+  }, [flippedCards]);
+
   function handleClick() {
-    setFlip(!flip);
     if (prevIndex !== index) {
       if (!solvedMemories.includes(index)) {
+        setFlip((prev) => !prev);
         setClickedCards((prev) => [...prev, id]);
         setCardIndex((prev) => [...prev, index]);
         setPrevIndex(index);

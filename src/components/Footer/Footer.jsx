@@ -11,12 +11,13 @@ function Footer() {
         About us
       </Link>
 
-      <a href="https://github.com/Hackathon-december-2022/Travel-memory-game">
-        <img
-          src={githublogo}
-          alt="github-logo"
-          className={styles.projectLink}
-        />
+      <a
+        className={styles.projectLink}
+        href="https://github.com/Hackathon-december-2022/Travel-memory-game"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img src={githublogo} alt="github-logo" />
       </a>
     </div>
   );

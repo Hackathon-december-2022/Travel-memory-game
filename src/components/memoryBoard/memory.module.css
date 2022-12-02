@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   text-decoration: underline;
-  text-decoration-color: #c26dbc;
+  text-decoration-color: var(--secondary-accent);
   font-size: 3vh;
 }
 
@@ -26,7 +26,7 @@
   width: 70%;
   padding: 16px;
   bottom: 0;
-  background-color: #c26dbc;
+  background-color: var(--secondary-accent);
   border-radius: 15px;
   font-size: 2.5vh;
   margin: 16px;
