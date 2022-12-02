@@ -19,15 +19,6 @@
   text-decoration-color: var(--secondary-accent);
   font-size: 1.5rem;
 }
-.wrapper {
-  position: relative;
-}
-.btnInfoModalOverlay {
-  position: absolute;
-}
-.headline {
-  font-size: 7vh;
-}
 
 .button {
   width: 70%;
@@ -41,6 +32,7 @@
 .overlay {
   width: 100vh;
   height: 100vh;
+
   position: absolute;
   z-index: 99;
 }
@@ -49,7 +41,6 @@
   min-width: 10vw;
   text-align: center;
 }
-
 @media screen and (min-width: 800px) {
   .all {
     width: 70vw;

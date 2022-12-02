@@ -5,6 +5,7 @@ function Rules() {
     <div className={styles.container}>
       <h2 className={styles.headline}>Travel-Memory-Game</h2>
       <p className={styles.introduction}>
+
         You dont know where to spend your next Holidays at? No Problem, we will
         helpt you making a Decision.
         <br /> With our Travel Memory Game we provide you with some beautiful

@@ -3,7 +3,6 @@ import Card from "../Card/Card";
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import CardsData from "./CardsData";
-import InfoModal from "../InfoModal/InfoModal";
 
 function MemoryBoard() {
   const [memoryCards, setMemoryCards] = useState(CardsData);
@@ -19,7 +18,6 @@ function MemoryBoard() {
   );
   const [memorySize, setMemorySize] = useState(12);
   const [layover, setLayover] = useState(false);
-
 
   function shuffleCards(array) {
     return array.sort(() => {
@@ -120,30 +118,22 @@ function MemoryBoard() {
       </div>
       <div className={styles.container}>
         {memoryCards.map((el, index) => (
-          <div className={styles.wrapper}>
-            <Card
-              key={index}
-              index={index}
-              name={el.name}
-              img={el.img}
-              id={el.id}
-              setClickedCards={setClickedCards}
-              setCardIndex={setCardIndex}
-              prevIndex={prevIndex}
-              setPrevIndex={setPrevIndex}
-              solvedMemories={solvedMemories}
-              flippedCards={flippedCards}
-              memorySize={memorySize}
-              setLayover={setLayover}
-            />
-            <InfoModal
-              key={index}
-              index={index}
-              placeTitle={el.name}
-              placeInfo={el.info}
-              solvedMemories={solvedMemories}
-            />
-          </div>
+          <Card
+            key={index}
+            index={index}
+            name={el.name}
+            img={el.img}
+            id={el.id}
+            setClickedCards={setClickedCards}
+            setCardIndex={setCardIndex}
+            prevIndex={prevIndex}
+            setPrevIndex={setPrevIndex}
+            solvedMemories={solvedMemories}
+            flippedCards={flippedCards}
+            memorySize={memorySize}
+            setLayover={setLayover}
+
+          />
         ))}
       </div>
       <button className={styles.button} onClick={handleRestart}>
