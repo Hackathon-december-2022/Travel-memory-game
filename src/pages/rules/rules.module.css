@@ -15,16 +15,18 @@
   padding: 10px;
 }
 .listItems {
-  padding: 5px;
+  padding: 10px;
   list-style: none;
 }
 
 @media screen and (min-width: 800px) {
   .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 10vh;
-    padding-bottom: 1rem;
+    justify-content: flex-start;
+
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+  .rulesHeadline {
+    padding-top: 1.5rem;
   }
 }
