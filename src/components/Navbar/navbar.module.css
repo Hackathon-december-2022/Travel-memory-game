@@ -4,8 +4,8 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 60px;
   background-color: var(--fourth-color);
+  padding: 20px 30px;
 }
 
 .rules {
@@ -19,4 +19,9 @@
 
 .navbarLogo {
   height: 80%;
+}
+
+.headline {
+  color: white;
+  font-size: 3rem;
 }

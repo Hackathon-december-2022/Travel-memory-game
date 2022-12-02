@@ -9,8 +9,33 @@
 
 :root {
   --base-font: "Roboto", sans-serif;
-  --primary-accent: #3cacae;
-  --secondary-accent: #c26dbc;
-  --third-color: rgb(255, 217, 0);
-  --fourth-color: #2c7c7d;
+  --primary-accent: #eeeeee;
+  --secondary-accent: #444cf7;
+  --third-color: #e5e5f7;
+  --fourth-color: #87aefb;
+  --primary-card: #e5e5f7;
+  --secondary-card: #444cf7;
+  --third-card: #444cf777;
+}
+
+:root {
+  --base-font: "Roboto", sans-serif;
+  --primary-accent: #ffeead;
+  --secondary-accent: #d9534f;
+  --third-color: #e5e5f7;
+  --fourth-color: #d9534f;
+  --primary-card: #f7ece6;
+  --secondary-card: #d9534f;
+  --third-card: #f76c6c;
+}
+
+:root {
+  --base-font: "Roboto", sans-serif;
+  --primary-accent: #eeeeee;
+  --secondary-accent: #f7c545;
+  --third-color: #e5e5f7;
+  --fourth-color: #d9534f;
+  --primary-card: #f7ece6;
+  --secondary-card: #f7c545;
+  --third-card: #f7c54577;
 }
