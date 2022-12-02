@@ -1,14 +1,20 @@
+* {
+  background-color: var(--primary-accent);
+}
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
+
   flex-direction: column;
   background-color: var(--primary-accent);
   min-height: 86vh;
+
 }
 
 .headline {
-  padding: 2rem;
+  padding-top: 5px;
+  padding: 2vh;
 }
 
 .groupImg {
@@ -16,5 +22,16 @@
   justify-content: center;
   width: 80%;
   height: auto;
-  margin: 2rem;
+  margin: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+  .groupImg {
+    max-width: 50%;
+    max-height: 50%;
+  }
 }
