@@ -1,6 +1,6 @@
 .container {
   display: flex;
   justify-content: center;
-  background-color: #3cacae;
+  background-color: var(--primary-accent);
   min-height: 100vh;
 }

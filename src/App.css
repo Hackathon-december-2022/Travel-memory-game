@@ -4,5 +4,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--base-font);
+}
+
+:root {
+  --base-font: "Roboto", sans-serif;
+  --primary-accent: #3cacae;
+  --secondary-accent: #c26dbc;
+  --third-color: rgb(255, 217, 0);
+  --fourth-color: #2c7c7d;
 }

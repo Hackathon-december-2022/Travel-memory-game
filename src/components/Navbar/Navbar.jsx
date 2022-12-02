@@ -6,6 +6,7 @@ function Navbar() {
   return (
     <div className={styles.navbar}>
       <Logo className={styles.navbarLogo} />
+      <h1 className={styles.headline}>Travel Memory</h1>
       <Link to="/rules" className={styles.rules}>
         Rules
       </Link>
