@@ -7,12 +7,23 @@
   font-family: var(--base-font);
 }
 
-:root {
+/*:root {
   --base-font: "Roboto", sans-serif;
   --primary-accent: #f7ece6;
   --secondary-accent: #f7c54577;
   --third-color: #e5e5f7;
   --fourth-color: #ff616d;
+  --primary-card: #f7ece6;
+  --secondary-card: #f7c545;
+  --third-card: #f7c54577;
+}*/
+
+:root {
+  --base-font: "Roboto", sans-serif;
+  --primary-accent: #f7efe6;
+  --secondary-accent: #617aff;
+  --third-color: #e5e5f7;
+  --fourth-color: #617aff;
   --primary-card: #f7ece6;
   --secondary-card: #f7c545;
   --third-card: #f7c54577;

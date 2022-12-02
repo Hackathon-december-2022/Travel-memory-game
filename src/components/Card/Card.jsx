@@ -20,7 +20,6 @@ function Card({
     // eslint-disable-next-line
   }, [flippedCards]);
 
-  console.log("MEMORYSIZE", memorySize);
   function handleClick() {
     if (prevIndex !== index) {
       if (!solvedMemories.includes(index)) {
@@ -28,8 +27,6 @@ function Card({
         setClickedCards((prev) => [...prev, id]);
         setCardIndex((prev) => [...prev, index]);
         setPrevIndex(index);
-      } else {
-        console.log("contained!");
       }
     }
   }
