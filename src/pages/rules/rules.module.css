@@ -18,3 +18,13 @@
   padding: 5px;
   list-style: none;
 }
+
+@media screen and (min-width: 800px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10vh;
+    padding-bottom: 1rem;
+  }
+}
