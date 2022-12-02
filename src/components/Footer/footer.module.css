@@ -4,10 +4,7 @@
   justify-content: space-between;
   width: 100%;
   background-color: var(--fourth-color);
-  position: fixed;
-  left: 0;
   bottom: 0;
-
 }
 
 .aboutUs {

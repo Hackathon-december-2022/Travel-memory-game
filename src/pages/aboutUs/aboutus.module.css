@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--primary-accent);
+  min-height: 86vh;
+}
+
+.headline {
+  padding: 2rem;
+}
+
+.groupImg {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: auto;
+  margin: 2rem;
+}

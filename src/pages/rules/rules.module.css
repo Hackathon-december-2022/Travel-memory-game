@@ -1,9 +1,10 @@
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 1rem;
-  padding-bottom: 3rem;
+  background-color: var(--primary-accent);
+  min-height: 86vh;
 }
 
 .introduction {
@@ -14,6 +15,6 @@
   padding: 10px;
 }
 .listItems {
-  padding: 10px;
+  padding: 5px;
   list-style: none;
 }
