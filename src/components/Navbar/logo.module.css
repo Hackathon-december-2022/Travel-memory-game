@@ -6,3 +6,8 @@
   padding-left: 10px;
   padding-top: 5px;
 }
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+}

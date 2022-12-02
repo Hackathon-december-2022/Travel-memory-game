@@ -41,7 +41,58 @@
 }
 
 .cardFaceFront {
-  background: var(--third-color);
+  background-color: var(--primary-card);
+  opacity: 0.8;
+  background-image: linear-gradient(
+      30deg,
+      var(--secondary-card) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--secondary-card) 87.5%,
+      var(--secondary-card)
+    ),
+    linear-gradient(
+      150deg,
+      var(--secondary-card) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--secondary-card) 87.5%,
+      var(--secondary-card)
+    ),
+    linear-gradient(
+      30deg,
+      var(--secondary-card) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--secondary-card) 87.5%,
+      var(--secondary-card)
+    ),
+    linear-gradient(
+      150deg,
+      var(--secondary-card) 12%,
+      transparent 12.5%,
+      transparent 87%,
+      var(--secondary-card) 87.5%,
+      var(--secondary-card)
+    ),
+    linear-gradient(
+      60deg,
+      var(--third-card) 25%,
+      transparent 25.5%,
+      transparent 75%,
+      var(--third-card) 75%,
+      var(--third-card)
+    ),
+    linear-gradient(
+      60deg,
+      var(--third-card) 25%,
+      transparent 25.5%,
+      transparent 75%,
+      var(--third-card) 75%,
+      var(--third-card)
+    );
+  background-size: 38px 67px;
+  background-position: 0 0, 0 0, 19px 33px, 19px 33px, 0 0, 19px 33px;
 }
 
 .cardFaceBack {

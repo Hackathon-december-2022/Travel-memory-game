@@ -40,9 +40,7 @@ function Card({
             : `${styles.innerCard}`
         }
       >
-        <div className={`${styles.cardFace} ${styles.cardFaceFront}`}>
-          Front
-        </div>
+        <div className={`${styles.cardFace} ${styles.cardFaceFront}`}></div>
         <div className={`${styles.cardFace} ${styles.cardFaceBack}`}>
           <img className={styles.cardImg} src={img} alt={name} />
         </div>
