@@ -10,13 +10,13 @@
   align-items: center;
 }
 .points {
-  padding: 16px;
+  padding: 26px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   text-decoration: underline;
   text-decoration-color: var(--secondary-accent);
-  font-size: 3vh;
+  font-size: 1.5rem;
 }
 .wrapper {
   position: relative;
