@@ -29,6 +29,13 @@
   font-size: 2.5vh;
   margin: 16px;
 }
+.overlay {
+  width: 100vh;
+  height: 100vh;
+
+  position: absolute;
+  z-index: 99;
+}
 
 .dropdown {
   min-width: 10vw;
