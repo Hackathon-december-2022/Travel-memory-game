@@ -16,6 +16,8 @@ function MemoryBoard() {
   const [flippedCards, setFlippedCards] = useState(
     Array(CardsData.length * 2).fill(false)
   );
+  const [memorySize, setMemorySize] = useState(12);
+  const [layover, setLayover] = useState(false);
 
   function shuffleCards(array) {
     return array.sort(() => {
@@ -24,23 +26,31 @@ function MemoryBoard() {
   }
 
   useEffect(() => {
-    if (solvedMemories.length / 2 === CardsData.length) {
+    if (solvedMemories.length / 2 === parseInt(memorySize)) {
       setYouWon(true);
     }
     // eslint-disable-next-line
   }, [solvedMemories]);
 
   useEffect(() => {
-    let double = [...CardsData, ...CardsData];
-    shuffleCards(double);
-    setMemoryCards(double);
+    if (!memorySize) {
+      let double = [...CardsData, ...CardsData];
+      shuffleCards(double);
+      setMemoryCards(double);
+    } else {
+      let adjustedMemory = [...CardsData].splice(0, memorySize);
+      let double = [...adjustedMemory, ...adjustedMemory];
+      shuffleCards(double);
+      setMemoryCards(double);
+    }
     // eslint-disable-next-line
-  }, [restart]);
+  }, [restart, memorySize]);
 
   useEffect(() => {
     const [firstCard, secondCard] = clickedCards;
     if (clickedCards.length === 2) {
       setMoves((prev) => prev + 1);
+      setLayover(true);
       // eslint-disable-next-line
       const waitToFlip = setTimeout(() => {
         if (firstCard === secondCard) {
@@ -51,6 +61,7 @@ function MemoryBoard() {
           setClickedCards([]);
           setCardIndex([]);
         }
+        setLayover(false);
       }, 1200);
       ///return clearTimeout(waitToFlip);
     }
@@ -82,12 +93,27 @@ function MemoryBoard() {
       setFlippedCards((prev) => Array(CardsData.length * 2).fill(false));
     }
   }
+
+  function handleSelect(elem) {
+    const selected = elem.target.value;
+    setMemorySize(selected);
+  }
+
   return (
     <div className={styles.all}>
+      {layover && <div className={styles.overlay}></div>}
       <div className={styles.points}>
         <div className={styles.moves}>
-          Done: {solvedMemories.length / 2} / {CardsData.length}
+          Done: {solvedMemories.length / 2} / {memorySize}
         </div>
+        <select className={styles.dropdown} onChange={handleSelect}>
+          <option value={12}>-choose a size-</option>
+          <option value={12}>12</option>
+          <option value={8}>8</option>
+          <option value={6}>6</option>
+          <option value={4}>4</option>
+          <option value={2}>2</option>
+        </select>
         <div className={styles.moves}>Moves: {moves}</div>
       </div>
       <div className={styles.container}>
@@ -104,6 +130,7 @@ function MemoryBoard() {
             setPrevIndex={setPrevIndex}
             solvedMemories={solvedMemories}
             flippedCards={flippedCards}
+            setLayover={setLayover}
           />
         ))}
       </div>

@@ -3,9 +3,13 @@
 }
 .container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding-top: 40%;
+
+  flex-direction: column;
+  background-color: var(--primary-accent);
+  min-height: 86vh;
+
 }
 
 .headline {
