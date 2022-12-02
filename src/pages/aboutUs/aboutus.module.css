@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   flex-direction: column;
   background-color: var(--primary-accent);
   min-height: 86vh;
-  padding-top: 40%;
 }
 
 .headline {
