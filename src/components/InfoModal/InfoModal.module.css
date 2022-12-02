@@ -9,7 +9,7 @@
   right: 0;
   text-align: justify;
   padding: 9.5vh 5vh;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.2;
 }
 .modalContainer h2 {
@@ -40,7 +40,7 @@
 }
 
 svg {
-  width: 4vh !important;
+  width: 7vh !important;
   height: auto;
   color: rgb(146, 96, 1);
   font-weight: 400;
