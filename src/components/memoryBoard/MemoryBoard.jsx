@@ -129,8 +129,15 @@ function MemoryBoard() {
               setPrevIndex={setPrevIndex}
               solvedMemories={solvedMemories}
               flippedCards={flippedCards}
-              setLayover={setLayover}
               memorySize={memorySize}
+              setLayover={setLayover}
+            />
+            <InfoModal
+              key={index}
+              index={index}
+              placeTitle={el.name}
+              placeInfo={el.info}
+              solvedMemories={solvedMemories}
             />
           </div>
         ))}

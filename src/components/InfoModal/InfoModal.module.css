@@ -9,7 +9,11 @@
   right: 0;
   text-align: justify;
   padding: 9.5vh 5vh;
+<<<<<<< HEAD
   font-size: 24px;
+=======
+  font-size: 18px;
+>>>>>>> 72e4231 (styling for modal)
   line-height: 1.2;
 }
 .modalContainer h2 {
@@ -27,6 +31,7 @@
   border: none;
   cursor: pointer;
 }
+<<<<<<< HEAD
 .btnInfoModalOverlay svg {
   position: absolute;
   top: 10%;
@@ -44,4 +49,11 @@ svg {
   height: auto;
   color: rgb(146, 96, 1);
   font-weight: 400;
+=======
+
+svg {
+  width: 4vh !important;
+  height: auto;
+  color: orange;
+>>>>>>> 72e4231 (styling for modal)
 }

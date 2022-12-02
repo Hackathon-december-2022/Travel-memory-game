@@ -1,7 +1,12 @@
 import styles from "./InfoModal.module.css";
+<<<<<<< HEAD
 import { useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BsPatchQuestionFill } from "react-icons/bs";
+=======
+import { useRef, useState } from "react";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+>>>>>>> 72e4231 (styling for modal)
 function InfoModal({ placeTitle, placeInfo, solvedMemories, index }) {
   const [isModalOpen, setModalOpen] = useState(false);
   console.log(solvedMemories.indexOf(index) !== -1, "clicked", index);
@@ -30,7 +35,11 @@ function InfoModal({ placeTitle, placeInfo, solvedMemories, index }) {
             }}
             className={styles.btnInfoModalOverlay}
           >
+<<<<<<< HEAD
             <BsPatchQuestionFill />
+=======
+            Learn More
+>>>>>>> 72e4231 (styling for modal)
           </button>
         )
       )}
