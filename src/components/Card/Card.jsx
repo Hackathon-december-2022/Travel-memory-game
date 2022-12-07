@@ -13,7 +13,6 @@ function Card({
   solvedMemories,
   flippedCards,
   memorySize,
-  modal,
 }) {
   const [flip, setFlip] = useState(false);
   useEffect(() => {
@@ -32,8 +31,10 @@ function Card({
     }
   }
   return (
-    <div className={`${styles.card}`} onClick={handleClick}>
-      {modal}
+    <div
+      className={memorySize > 11 ? `${styles.card}` : `${styles.cardx8}`}
+      onClick={handleClick}
+    >
       <div
         className={
           flip
