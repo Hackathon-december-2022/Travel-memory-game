@@ -3,7 +3,6 @@ import Card from "../Card/Card";
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import CardsData from "./CardsData";
-import InfoModal from "../InfoModal/InfoModal";
 
 function MemoryBoard() {
   const [memoryCards, setMemoryCards] = useState(CardsData);
@@ -133,16 +132,7 @@ function MemoryBoard() {
             flippedCards={flippedCards}
             memorySize={memorySize}
             setLayover={setLayover}
-            modal={
-              <InfoModal
-                key={index}
-                index={index}
-                placeTitle={el.name}
-                placeInfo={el.info}
-                solvedMemories={solvedMemories}
-                placeContribution={el.contribution}
-              />
-            }
+
           />
         ))}
       </div>
